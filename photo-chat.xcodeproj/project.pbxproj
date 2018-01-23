@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		C03891162016C02B00A9E0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03891152016C02B00A9E0A1 /* AppDelegate.swift */; };
-		C03891182016C02B00A9E0A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03891172016C02B00A9E0A1 /* ViewController.swift */; };
+		C03891182016C02B00A9E0A1 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03891172016C02B00A9E0A1 /* CameraVC.swift */; };
 		C038911B2016C02B00A9E0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03891192016C02B00A9E0A1 /* Main.storyboard */; };
 		C038911E2016C02B00A9E0A1 /* photo_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C038911C2016C02B00A9E0A1 /* photo_chat.xcdatamodeld */; };
 		C03891202016C02B00A9E0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C038911F2016C02B00A9E0A1 /* Assets.xcassets */; };
 		C03891232016C02B00A9E0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03891212016C02B00A9E0A1 /* LaunchScreen.storyboard */; };
 		C038912E2016C02B00A9E0A1 /* photo_chatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C038912D2016C02B00A9E0A1 /* photo_chatTests.swift */; };
 		C03891392016C02B00A9E0A1 /* photo_chatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03891382016C02B00A9E0A1 /* photo_chatUITests.swift */; };
+		C03891652016D19E00A9E0A1 /* AAPLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03891642016D19E00A9E0A1 /* AAPLCameraViewController.m */; };
+		C03891682016D1B200A9E0A1 /* AAPLPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = C03891672016D1B200A9E0A1 /* AAPLPreviewView.m */; };
+		C0520CC12017FDF800F3780A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0520CC02017FDF800F3780A /* GoogleService-Info.plist */; };
+		C0520CCA2017FEF600F3780A /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC32017FEF600F3780A /* FirebaseAnalytics.framework */; };
+		C0520CCB2017FEF600F3780A /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC42017FEF600F3780A /* FirebaseCore.framework */; };
+		C0520CCC2017FEF600F3780A /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC52017FEF600F3780A /* FirebaseCoreDiagnostics.framework */; };
+		C0520CCD2017FEF600F3780A /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC62017FEF600F3780A /* FirebaseInstanceID.framework */; };
+		C0520CCE2017FEF600F3780A /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC72017FEF600F3780A /* FirebaseNanoPB.framework */; };
+		C0520CCF2017FEF600F3780A /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC82017FEF600F3780A /* GoogleToolboxForMac.framework */; };
+		C0520CD02017FEF600F3780A /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0520CC92017FEF600F3780A /* nanopb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +47,7 @@
 /* Begin PBXFileReference section */
 		C03891122016C02B00A9E0A1 /* photo-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03891152016C02B00A9E0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C03891172016C02B00A9E0A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C03891172016C02B00A9E0A1 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		C038911A2016C02B00A9E0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C038911D2016C02B00A9E0A1 /* photo_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = photo_chat.xcdatamodel; sourceTree = "<group>"; };
 		C038911F2016C02B00A9E0A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +59,20 @@
 		C03891342016C02B00A9E0A1 /* photo-chatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "photo-chatUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03891382016C02B00A9E0A1 /* photo_chatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photo_chatUITests.swift; sourceTree = "<group>"; };
 		C038913A2016C02B00A9E0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C03891462016CBFC00A9E0A1 /* photo-chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "photo-chat-Bridging-Header.h"; sourceTree = "<group>"; };
+		C03891632016D19E00A9E0A1 /* AAPLCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraViewController.h; sourceTree = "<group>"; };
+		C03891642016D19E00A9E0A1 /* AAPLCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCameraViewController.m; sourceTree = "<group>"; };
+		C03891662016D1B200A9E0A1 /* AAPLPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPreviewView.h; sourceTree = "<group>"; };
+		C03891672016D1B200A9E0A1 /* AAPLPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPreviewView.m; sourceTree = "<group>"; };
+		C03891692016D21B00A9E0A1 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
+		C0520CC02017FDF800F3780A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0520CC32017FEF600F3780A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		C0520CC42017FEF600F3780A /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		C0520CC52017FEF600F3780A /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		C0520CC62017FEF600F3780A /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		C0520CC72017FEF600F3780A /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		C0520CC82017FEF600F3780A /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = "<group>"; };
+		C0520CC92017FEF600F3780A /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0520CCC2017FEF600F3780A /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				C0520CCB2017FEF600F3780A /* FirebaseCore.framework in Frameworks */,
+				C0520CCE2017FEF600F3780A /* FirebaseNanoPB.framework in Frameworks */,
+				C0520CD02017FEF600F3780A /* nanopb.framework in Frameworks */,
+				C0520CCF2017FEF600F3780A /* GoogleToolboxForMac.framework in Frameworks */,
+				C0520CCA2017FEF600F3780A /* FirebaseAnalytics.framework in Frameworks */,
+				C0520CCD2017FEF600F3780A /* FirebaseInstanceID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +130,18 @@
 		C03891142016C02B00A9E0A1 /* photo-chat */ = {
 			isa = PBXGroup;
 			children = (
+				C0520CC22017FEDA00F3780A /* Frameworks */,
+				C0732DCF2017EA7D00B605D1 /* Protocols */,
+				C03891512016CC2A00A9E0A1 /* Controller */,
+				C03891502016CC1700A9E0A1 /* View */,
 				C03891152016C02B00A9E0A1 /* AppDelegate.swift */,
-				C03891172016C02B00A9E0A1 /* ViewController.swift */,
+				C0520CC02017FDF800F3780A /* GoogleService-Info.plist */,
 				C03891192016C02B00A9E0A1 /* Main.storyboard */,
 				C038911F2016C02B00A9E0A1 /* Assets.xcassets */,
 				C03891212016C02B00A9E0A1 /* LaunchScreen.storyboard */,
 				C03891242016C02B00A9E0A1 /* Info.plist */,
 				C038911C2016C02B00A9E0A1 /* photo_chat.xcdatamodeld */,
+				C03891462016CBFC00A9E0A1 /* photo-chat-Bridging-Header.h */,
 			);
 			path = "photo-chat";
 			sourceTree = "<group>";
@@ -126,6 +162,47 @@
 				C038913A2016C02B00A9E0A1 /* Info.plist */,
 			);
 			path = "photo-chatUITests";
+			sourceTree = "<group>";
+		};
+		C03891502016CC1700A9E0A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C03891662016D1B200A9E0A1 /* AAPLPreviewView.h */,
+				C03891672016D1B200A9E0A1 /* AAPLPreviewView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C03891512016CC2A00A9E0A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C03891632016D19E00A9E0A1 /* AAPLCameraViewController.h */,
+				C03891642016D19E00A9E0A1 /* AAPLCameraViewController.m */,
+				C03891172016C02B00A9E0A1 /* CameraVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C0520CC22017FEDA00F3780A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0520CC32017FEF600F3780A /* FirebaseAnalytics.framework */,
+				C0520CC42017FEF600F3780A /* FirebaseCore.framework */,
+				C0520CC52017FEF600F3780A /* FirebaseCoreDiagnostics.framework */,
+				C0520CC62017FEF600F3780A /* FirebaseInstanceID.framework */,
+				C0520CC72017FEF600F3780A /* FirebaseNanoPB.framework */,
+				C0520CC82017FEF600F3780A /* GoogleToolboxForMac.framework */,
+				C0520CC92017FEF600F3780A /* nanopb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0732DCF2017EA7D00B605D1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C03891692016D21B00A9E0A1 /* AAPLCameraVCDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +274,7 @@
 					C03891112016C02A00A9E0A1 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = V4P7JY664L;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					C03891282016C02B00A9E0A1 = {
@@ -239,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03891232016C02B00A9E0A1 /* LaunchScreen.storyboard in Resources */,
+				C0520CC12017FDF800F3780A /* GoogleService-Info.plist in Resources */,
 				C03891202016C02B00A9E0A1 /* Assets.xcassets in Resources */,
 				C038911B2016C02B00A9E0A1 /* Main.storyboard in Resources */,
 			);
@@ -265,9 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03891182016C02B00A9E0A1 /* ViewController.swift in Sources */,
+				C03891182016C02B00A9E0A1 /* CameraVC.swift in Sources */,
 				C03891162016C02B00A9E0A1 /* AppDelegate.swift in Sources */,
+				C03891682016D1B200A9E0A1 /* AAPLPreviewView.m in Sources */,
 				C038911E2016C02B00A9E0A1 /* photo_chat.xcdatamodeld in Sources */,
+				C03891652016D19E00A9E0A1 /* AAPLCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +498,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = V4P7JY664L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/photo-chat",
+				);
 				INFOPLIST_FILE = "photo-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.winedarkproductions.photo-chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "photo-chat/photo-chat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,11 +518,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = V4P7JY664L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/photo-chat",
+				);
 				INFOPLIST_FILE = "photo-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.winedarkproductions.photo-chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "photo-chat/photo-chat-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -516,6 +610,7 @@
 				C038913F2016C02B00A9E0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C03891402016C02B00A9E0A1 /* Build configuration list for PBXNativeTarget "photo-chatTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +619,7 @@
 				C03891422016C02B00A9E0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C03891432016C02B00A9E0A1 /* Build configuration list for PBXNativeTarget "photo-chatUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +628,7 @@
 				C03891452016C02B00A9E0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>776413744648-4f4ol6nbdcb29q09u38mcs21unj02fsf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.776413744648-4f4ol6nbdcb29q09u38mcs21unj02fsf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgNrN7d0DnWS1wf9C8gsm8qMG_p_LirL0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>776413744648</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.winedarkproductions.photo-chat</string>
+	<key>PROJECT_ID</key>
+	<string>photochat-b58ba</string>
+	<key>STORAGE_BUCKET</key>
+	<string>photochat-b58ba.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:776413744648:ios:d3583c447a27ff6c</string>
+	<key>DATABASE_URL</key>
+	<string>https://photochat-b58ba.firebaseio.com</string>
+</dict>
+</plist>
