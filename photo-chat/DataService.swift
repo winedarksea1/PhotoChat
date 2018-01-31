@@ -43,4 +43,20 @@ class DataService {
         let profile: Dictionary<String, Any> = ["firstName": "", "lastName": ""]
         mainRef.child(FIR_CHILD_USERS).child(uid).child("profile").setValue(profile)
     }
+    
+    func sendMediaPullRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaURL: URL, textSnippet: String? = nil) {
+        var uids = [String]()
+        for uid in sendingTo.keys {
+            uids.append(uid)
+        }
+        
+        var pr: Dictionary<String, Any> = [
+            "mediaURL": mediaURL.absoluteString,
+            "userID": senderUID,
+            "openCount": 0,
+            "reciptients": uids
+        ]
+        
+        mainRef.child("pullRequests").childByAutoId().setValue(pr)
+    }
 }
