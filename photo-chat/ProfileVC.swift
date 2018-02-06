@@ -51,4 +51,7 @@ class ProfileVC: UIViewController {
     }
     
     // Actions
+    @IBAction func exitBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
