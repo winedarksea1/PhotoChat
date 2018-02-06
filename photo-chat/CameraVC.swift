@@ -62,6 +62,11 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate, CLLocationManage
     @IBAction func changeCameraBtnPressed(_ sender: Any) {
         changeCamera()
     }
+    
+    @IBAction func exitBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
         
     // Protocol Methods
     

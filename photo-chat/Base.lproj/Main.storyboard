@@ -173,7 +173,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iy9-qK-7as" userLabel="PreviewView" customClass="AAPLPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-Jg-zj5">
+                                        <rect key="frame" x="19" y="11" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back_to_chat_btn"/>
+                                        <connections>
+                                            <action selector="exitBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jya-vu-lFQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="AOU-mh-eD1"/>
+                                    <constraint firstAttribute="height" constant="667" id="wSf-aP-ApE"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svv-g4-DVT">
                                 <rect key="frame" x="156" y="601" width="63" height="58"/>
@@ -203,10 +217,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Svv-g4-DVT" secondAttribute="bottom" constant="8" id="2A6-cS-cwp"/>
                             <constraint firstItem="iy9-qK-7as" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="36B-tm-hG7"/>
                             <constraint firstItem="iy9-qK-7as" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9JX-kd-hVJ"/>
+                            <constraint firstItem="iy9-qK-7as" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bfa-TY-bwl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iy9-qK-7as" secondAttribute="bottom" id="HkX-nA-0C2"/>
                             <constraint firstItem="Svv-g4-DVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K8u-Pw-8gH"/>
                             <constraint firstItem="xKc-nn-Zbr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Rh9-nl-jjn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKc-nn-Zbr" secondAttribute="trailing" constant="8" id="YZB-cB-Omj"/>
+                            <constraint firstItem="iy9-qK-7as" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kGQ-am-QCo"/>
                             <constraint firstAttribute="trailing" secondItem="iy9-qK-7as" secondAttribute="trailing" id="yag-8g-HbN"/>
                         </constraints>
                     </view>
