@@ -19,6 +19,9 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var _snapData: Data?
     private var _videoURL: URL?
     
+    private var _usersLatitude: Double?
+    private var _usersLongitude: Double?
+    
     var snapData: Data? {
         get {
             return _snapData
@@ -37,6 +40,24 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    var usersLatitude: Double {
+        get {
+            return _usersLatitude!
+        }
+        set {
+            _usersLatitude = newValue
+        }
+    }
+    
+    var usersLongitude: Double {
+        get {
+            return _usersLongitude!
+        }
+        set {
+            _usersLongitude = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,9 +72,9 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 for (key, value) in users {
                     if let dict = value as? Dictionary<String, Any> {
                         if let profile = dict["profile"] as? Dictionary<String, Any> {
-                            if let firestName = profile["firstName"] as? String {
+                            if let firstName = profile["firstName"] as? String {
                                 let uid = key
-                                let user = User(uid: uid, firstName: firestName)
+                                let user = User(uid: uid, firstName: firstName)
                                 self.users.append(user)
                             }
                         }
@@ -118,7 +139,7 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 } else {
                     let downloadURL = meta?.downloadURL()
                     
-                    DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Coding today was legit")
+                    DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: self.selectedUsers, mediaURL: downloadURL!, usersLatitude: self.usersLatitude, usersLongitude: self.usersLongitude, textSnippet: "Coding today was legit")
                     
                 }
             })

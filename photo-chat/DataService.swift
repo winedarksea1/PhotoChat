@@ -10,10 +10,15 @@ import Foundation
 import FirebaseDatabase
 import FirebaseStorage
 
+import CoreLocation
+
 let FIR_CHILD_USERS = "users"
 
 class DataService {
     private static let _instance = DataService()
+    
+    // Added this
+    private let userLocation = CLLocationCoordinate2D()
     
     static var instance: DataService {
         return _instance
@@ -40,23 +45,44 @@ class DataService {
     }
     
     func saveUser(uid: String) {
-        let profile: Dictionary<String, Any> = ["firstName": "", "lastName": ""]
+        let profile: Dictionary<String, Any> = ["firstName": "", "lastName": "", "imgURL": ""]
         mainRef.child(FIR_CHILD_USERS).child(uid).child("profile").setValue(profile)
     }
     
-    func sendMediaPullRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaURL: URL, textSnippet: String? = nil) {
+    // get info for a specific user
+    func getUserInfo(uid: String) -> DatabaseReference {
+        return mainRef.child(FIR_CHILD_USERS).child(uid).child("profile")
+    }
+    
+    func sendMediaPullRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaURL: URL, usersLatitude: Double, usersLongitude: Double, textSnippet: String? = nil) {
         var uids = [String]()
         for uid in sendingTo.keys {
             uids.append(uid)
         }
         
-        var pr: Dictionary<String, Any> = [
+        let pr: Dictionary<String, Any> = [
             "mediaURL": mediaURL.absoluteString,
             "userID": senderUID,
             "openCount": 0,
-            "reciptients": uids
+            "reciptients": uids,
+            "usersLatitude": usersLatitude,
+            "usersLongitude": usersLongitude
         ]
         
-        mainRef.child("pullRequests").childByAutoId().setValue(pr)
+        let reference = mainRef.child("pullRequests").childByAutoId()
+        reference.setValue(pr)
+        let childAutoId = reference.key
+        
+        let location = CLLocation(latitude: usersLatitude, longitude: usersLongitude)
+//        geoFire?.setLocation(location, forKey: childAutoId)
+        
+        geoFire?.setLocation(CLLocation(latitude: usersLatitude, longitude: usersLongitude), forKey: childAutoId) { (error) in
+            if (error != nil) {
+                print("An error occured: \(error)")
+            } else {
+                print("Saved location successfully!")
+            }
+        }
+
     }
 }

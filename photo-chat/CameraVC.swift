@@ -8,24 +8,48 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
-class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
+import MapKit
+
+
+class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var previewView: AAPLPreviewView!
     @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
-
+    
+    let locationManager = CLLocationManager()
+    let userLocation = CLLocationCoordinate2D()
+    
     override func viewDidLoad() {
+        locationManager.delegate = self
+        
         delegate = self
         _previewView = previewView
+        locationAuthStatus()
+        
         super.viewDidLoad()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
+//        performSegue(withIdentifier: "LoginVC", sender: nil)
         guard Auth.auth().currentUser != nil else {
             performSegue(withIdentifier: "LoginVC", sender: nil)
             return
         }
+        
+        // Try again
+        DataService.instance.usersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let uid = Auth.auth().currentUser?.uid
+            if let users = snapshot.value as? Dictionary<String, Any> {
+                print(users[uid!]!)
+            }
+        })
+//
+        
+            
+        locationManager.startUpdatingLocation()
+        print(userLocation.latitude)
     }
     
     // Actions
@@ -82,11 +106,39 @@ class CameraVC: AAPLCameraViewController, AAPLCameraVCDelegate {
             if let videoDict = sender as? Dictionary<String, URL> {
                 let url = videoDict["videoURL"]
                 usersVC.videoURL = url
+            
+                if let usersLatitude = (locationManager.location?.coordinate.latitude)! as? Double {
+                    usersVC.usersLatitude = usersLatitude
+                }
+                
+                if let usersLongitude = (locationManager.location?.coordinate.longitude)! as? Double {
+                    usersVC.usersLongitude = usersLongitude
+                }
+                
             } else if let snapDict = sender as? Dictionary<String, Data> {
                 let snapData = snapDict["snapshotData"]
                 usersVC.snapData = snapData
             }
         }
     }
+    
+    // Inherited Location Methods
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Location was updated")
+        print((locationManager.location?.coordinate.latitude)! as Double)
+    }
+    
+    
+    // Custom Location Methods
+    
+    func locationAuthStatus() {
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    
 }
 
