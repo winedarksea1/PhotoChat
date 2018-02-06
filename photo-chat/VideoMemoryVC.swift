@@ -63,19 +63,26 @@ class VideoMemoryVC: UIViewController {
 //        }
         
         DataService.instance.mainRef.child("pullRequests").observeSingleEvent(of: .value, with: { (snapshot) in
+            print("INSIDE SNAPSHOT")
+            print(snapshot)
             if let pullRequests = snapshot.value as? Dictionary<String, Dictionary<String, Any>> {
+                print("INSIDE PULL REQUESTS PLURAL")
                 if let pullRequest = pullRequests[self.videoName] {
+                    print("INSIDE PULL REQUEST SINGULAR")
                     if let mediaURL = pullRequest["mediaURL"] {
                         self.videoURL = mediaURL as! String
+                        print("VIDEO URL!!!!")
+                        print(self.videoURL)
+                        let videoURL = URL(string: self.videoURL)
+                        let player = AVPlayer(url: videoURL!)
+                        let playerLayer = AVPlayerLayer(player: player)
+                        playerLayer.frame = self.view.bounds
+                        self.view.layer.addSublayer(playerLayer)
+                        player.play()
+                        print("playing video")
                     }
                 }
             }
-            let videoURL = URL(string: self.videoURL)
-            let player = AVPlayer(url: videoURL!)
-            let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = self.view.bounds
-            self.view.layer.addSublayer(playerLayer)
-            player.play()
             
         })
         

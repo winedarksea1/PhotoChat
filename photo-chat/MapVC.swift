@@ -73,11 +73,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        print("Outside of if let: ")
-        print(view.annotation?.title)
         if let anno = view.annotation as? MapAnnotation {
-            print("Inside of if let: ")
-            print(anno.title)
             var place: MKPlacemark!
             if #available(iOS 10.0, *) {
                 place = MKPlacemark(coordinate: anno.coordinate)
